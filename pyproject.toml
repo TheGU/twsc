@@ -1,0 +1,7 @@
+[project]
+name = "twsc"
+version = "0.1.0"
+description = "TWS API Client : Helper tool to  trade with IBKR TWS API"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
