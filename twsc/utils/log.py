@@ -39,4 +39,4 @@ def setup_logging(
     logger = logging.getLogger(name or __name__)
     logger.info("Logging is set up with level: %s", level)
 
-    # return logger
+    return logger

@@ -6,6 +6,7 @@ from ibapi.wrapper import EWrapper
 
 from .mixin import (
     ConnectionMixin,
+    HistoricalDataMixin,
 )
 
 logger = logging.getLogger(__name__)
@@ -13,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 class IBKRClient(
     ConnectionMixin,
+    HistoricalDataMixin,
     EWrapper,
     EClient,
 ):
@@ -53,6 +55,7 @@ class IBKRClient(
         
         # Initialize all mixins
         ConnectionMixin.__init__(self)
+        HistoricalDataMixin.__init__(self, timezone=timezone)
         
         # Set connection configuration
         self.set_connection_config(

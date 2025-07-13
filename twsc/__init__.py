@@ -10,6 +10,7 @@ __author__ = "ibtrade Development Team"
 
 
 from .client import IBKRClient
+from .contract import Contract
 
 from .utils.log import setup_logging
 
@@ -17,4 +18,6 @@ from .utils.log import setup_logging
 __all__ = [
     "IBKRClient",
     "setup_logging",
+    
+    "Contract"
 ]

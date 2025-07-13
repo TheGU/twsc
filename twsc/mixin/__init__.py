@@ -9,9 +9,12 @@ to the main IBKRClient. Each mixin handles a specific domain of operations:
 
 from .base import BaseMixin
 from .connection import ConnectionMixin
+from .historical import HistoricalDataMixin
 
 
 __all__ = [
     'BaseMixin',
     'ConnectionMixin',
+
+    'HistoricalDataMixin',
 ]
