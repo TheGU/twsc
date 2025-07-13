@@ -28,22 +28,43 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-Install tws api from https://interactivebrokers.github.io/#
-Then install ibapi from source package
-```sh
-cd ${TWS_API_INSTALLATION_FOLDER}/source/pythonclient/
-python setup.py install
+### 3. Install ibapi from source
+
+**Important**: The `ibapi` package must be installed from the official Interactive Brokers TWS API package, as the PyPI version (9.87) is outdated and incompatible with current TWS clients (10.30+).
+
+#### Option A: Use the provided scripts (recommended)
+
+**Windows PowerShell:**
+```powershell
+.\scripts\install_ibapi.ps1
 ```
 
-Verify ibapi version by running
+**Linux/macOS:**
 ```sh
-uv pip freeze
+./scripts/install_ibapi.sh
 ```
-The output should have this line
+
+#### Option B: Manual installation
+
+1. Download the TWS API package from https://interactivebrokers.github.io/#
+   - **Windows**: Download `twsapi_windows.1030.01.msi`
+   - **Linux/macOS**: Download `twsapi_macunix.1030.01.zip`
+
+2. Install the TWS API package
+3. Navigate to the pythonclient directory:
+   ```sh
+   cd ${TWS_API_INSTALLATION_FOLDER}/source/pythonclient/
+   python setup.py install
+   ```
+
+#### Verify installation
+
 ```sh
-...
+uv pip freeze | grep ibapi
+```
+The output should show:
+```sh
 ibapi==10.37.2
-...
 ```
 
 
